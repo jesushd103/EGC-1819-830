@@ -16,7 +16,12 @@ script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
 - python ./manage.py test mixnet --keepdb
+- python manage.py test store
 - rm local_settings.py
 - cd ..
-    on:
-      branch: master
+deploy:
+  provider: heroku
+  app: decideexamen
+  strategy: git
+  api_key:
+    secure: Nq6ve+dmfmHMXzElTg1YMUVIWsp9ncgp1z4Ghy3T9UbOa1NkYGkbz8YlDyeFRzEeSK6Ks2ZwDAA1RC/E9ieTXGXHJ30uwAQOEkCoI9N8Z3HzxIEjyoCM+YJWl57g5r0jjxAMo12TcthfWInCXmt9gQHHXGkc85Nw8t+St0veSKCoLry2Sygb6i29spr4z36NPq+eAHojwHQFg2T8BxXZfvxfPmiaA5c9UkIfOvk+cgZhCP46K+XoNO5Z7d5Qly7au32zvXka3Qhf0FH5dhTnOA6JA2iTEzXhF6OUaCeBb3olGbQl+s05UdFwu+GLhnoYYD7+MTxwky4iU1M1Wocu/g063BPpg3Z/NGQ2qdnaryLJlsdEd2Cobb9y/6c7wu/mbqHMUxkZHFNyDuYtl18C0nkXXCzy+C+E1dBcjo2Ym25du85VQ7id4MrPLyP4YLBSrLQLdsictJ+bAv8/+ouzl00nBYSD2e0//qWgKAVequr11fF1NNmk0qMi5blcr49GSJ7SLh8AkhrJmeKfLrZkV9bTKeIjhFBnrv2359uX7AwEW3j8nQlRokXzdOVwi2ZIb2Pfz1NCttyCCYfUL1rLDn+g6MpMQJ5mcEzTHlpVJfkr3ADFDBq7COnK6gOp0TdNbRgzGr5mkq7kYsGAjY0XTaV94+wfwNIML/usVv/M0s0=
