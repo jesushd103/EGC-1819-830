@@ -17,3 +17,6 @@ script:
 - cp travis_local_settings.py local_settings.py
 - python ./manage.py test mixnet --keepdb
 - rm local_settings.py
+- cd ..
+    on:
+      branch: master
