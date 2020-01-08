@@ -15,7 +15,6 @@ install:
 script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
-- python ./manage.py test mixnet --keepdb
 - python manage.py test store
 - rm local_settings.py
 - cd ..
